@@ -104,6 +104,31 @@
     
     
     <entry>
+      <title>jQuery层次选择器</title>
+      <link href="2020/11/28/jquery-ceng-ci-xuan-ze-qi/"/>
+      <url>2020/11/28/jquery-ceng-ci-xuan-ze-qi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="jQuery入门之层次选择器"><a href="#jQuery入门之层次选择器" class="headerlink" title="jQuery入门之层次选择器"></a>jQuery入门之层次选择器</h1><h2 id="一、后代选择器"><a href="#一、后代选择器" class="headerlink" title="一、后代选择器"></a>一、后代选择器</h2><p><strong>含义</strong><br>后代选择器，用于选择元素内部的所有某一种元素，包括子元素和其他后代元素。</p><p><strong>语法</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(&quot;M N&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><strong>说明</strong></p><p>“M元素”和“N元素”之间用空格隔开，表示选中M元素内部的后代N元素（即所有N元素）。</p><p><strong>举例</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(function()&#123;$(&quot;first p&quot;).css(&quot;color&quot;,&quot;red&quot;);&#125;);&lt;xmp&gt;&lt;div id&#x3D;&quot;first&quot;&gt;&lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;div id&#x3D;&quot;second&quot;&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;&#x2F;div&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;&lt;&#x2F;div&gt;&lt;&#x2F;xmp&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>分析</strong></p><p>$(“#first p”)表示选取id=”first”的元素内部的所有p元素。</p><p>因此，不管是子元素，还是其他后代元素，全部都会被选中。</p><h2 id="二、子代选择器"><a href="#二、子代选择器" class="headerlink" title="二、子代选择器"></a>二、子代选择器</h2><p><strong>含义</strong></p><p>子代选择器，用于选中元素内部的某一种子元素。子代选择器与后代选择器虽然很相似，但是也有着明显的区别。</p><p>·后代选择器，选取的是元素内部所有的元素（包括子元素、孙元素等）。</p><p>·子代选择器，选取的是元素内部的某一种子元素（只限子元素）。</p><p><strong>语法</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(&quot;M&gt;N&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><strong>说明</strong><br>“M元素”和“N元素”之间使用“&gt;”选择符，表示选中M元素内部的子元素N。<br><strong>举例</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(function()&#123;$(&quot;first&gt;p&quot;).css(&quot;color&quot;,&quot;red&quot;);&#125;);&lt;xmp&gt;&lt;div id&#x3D;&quot;first&quot;&gt;&lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;div id&#x3D;&quot;second&quot;&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;&#x2F;div&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;&lt;&#x2F;div&gt;&lt;&#x2F;xmp&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>分析</strong></p><p>$(“#first&gt;p”)表示选中id=”first”的元素下的子元素p。</p><p>我们将这个例子与后代选择器的例子对比一下，就可以很清楚地知道：<strong>子代选择器只选取子元素，不包括其他后代元素。</strong></p><h2 id="三、兄弟选择器"><a href="#三、兄弟选择器" class="headerlink" title="三、兄弟选择器"></a>三、兄弟选择器</h2><p><strong>含义</strong><br>兄弟选择器，用于选中元素后面（不包括前面）的某一类兄弟元素。<br><strong>语法</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(&quot;M~N&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><strong>说明</strong><br>类名前面必须加上前缀英文句号（.），否则该选择器无法生效。类名前面加上英文句号（.），表示这是一个class选择器。</p><p><strong>举例</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(function()&#123;$(&quot;#second~p&quot;).css(&quot;color&quot;,&quot;red&quot;);&#125;);&lt;xmp&gt;&lt;div id&#x3D;&quot;first&quot;&gt;&lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;div id&#x3D;&quot;second&quot;&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;&#x2F;div&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;&lt;&#x2F;div&gt;&lt;&#x2F;xmp&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>分析</strong></p><p>$(“#second~p”)表示选取id=”second”的元素后面所有的兄弟元素p。记住，兄弟选择器只选取后面所有的兄弟元素，不包括前面的所有兄弟元素。</p><h2 id="四、相邻选择器"><a href="#四、相邻选择器" class="headerlink" title="四、相邻选择器"></a>四、相邻选择器</h2><p><strong>含义</strong><br>相邻选择器，用于选中元素后面（不包括前面）的某一个“相邻”的兄弟元素。相邻选择器与兄弟选择器也非常相似，不过也有明显的区别。</p><p>·兄弟选择器选取元素后面“所有”的某一类元素。</p><p>·相邻选择器选取元素后面“相邻”的某一个元素。</p><p><strong>语法</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(&quot;M+N&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><strong>说明</strong><br>“M元素”和“N元素”之间使用“+”选择符，表示选中M元素后面的相邻的兄弟元素N。</p><p><strong>举例</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(function()&#123;$(&quot;#second+p&quot;).css(&quot;color&quot;,&quot;red&quot;);&#125;);&lt;xmp&gt;&lt;div id&#x3D;&quot;first&quot;&gt;&lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;div id&#x3D;&quot;second&quot;&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;&#x2F;div&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;&lt;&#x2F;div&gt;&lt;&#x2F;xmp&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>分析</strong><br>$(“#second+p”)表示选取id=”second”的元素后面的“相邻”的兄弟元素p。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> jQuery </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> jQuery选择器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>jQuery基本选择器</title>
       <link href="2020/11/28/jquery-ji-ben-xuan-ze-qi/"/>
       <url>2020/11/28/jquery-ji-ben-xuan-ze-qi/</url>
@@ -152,39 +177,14 @@
     </entry>
     
     
-    
-    <entry>
-      <title>jQuery层次选择器</title>
-      <link href="2020/11/28/jquery-ceng-ci-xuan-ze-qi/"/>
-      <url>2020/11/28/jquery-ceng-ci-xuan-ze-qi/</url>
-      
-        <content type="html"><![CDATA[<h1 id="jQuery入门之层次选择器"><a href="#jQuery入门之层次选择器" class="headerlink" title="jQuery入门之层次选择器"></a>jQuery入门之层次选择器</h1><h2 id="一、后代选择器"><a href="#一、后代选择器" class="headerlink" title="一、后代选择器"></a>一、后代选择器</h2><p><strong>含义</strong><br>后代选择器，用于选择元素内部的所有某一种元素，包括子元素和其他后代元素。</p><p><strong>语法</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(&quot;M N&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><strong>说明</strong></p><p>“M元素”和“N元素”之间用空格隔开，表示选中M元素内部的后代N元素（即所有N元素）。</p><p><strong>举例</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(function()&#123;$(&quot;first p&quot;).css(&quot;color&quot;,&quot;red&quot;);&#125;);&lt;xmp&gt;&lt;div id&#x3D;&quot;first&quot;&gt;&lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;div id&#x3D;&quot;second&quot;&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;&#x2F;div&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;&lt;&#x2F;div&gt;&lt;&#x2F;xmp&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>分析</strong></p><p>$(“#first p”)表示选取id=”first”的元素内部的所有p元素。</p><p>因此，不管是子元素，还是其他后代元素，全部都会被选中。</p><h2 id="二、子代选择器"><a href="#二、子代选择器" class="headerlink" title="二、子代选择器"></a>二、子代选择器</h2><p><strong>含义</strong></p><p>子代选择器，用于选中元素内部的某一种子元素。子代选择器与后代选择器虽然很相似，但是也有着明显的区别。</p><p>·后代选择器，选取的是元素内部所有的元素（包括子元素、孙元素等）。</p><p>·子代选择器，选取的是元素内部的某一种子元素（只限子元素）。</p><p><strong>语法</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(&quot;M&gt;N&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><strong>说明</strong><br>“M元素”和“N元素”之间使用“&gt;”选择符，表示选中M元素内部的子元素N。<br><strong>举例</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(function()&#123;$(&quot;first&gt;p&quot;).css(&quot;color&quot;,&quot;red&quot;);&#125;);&lt;xmp&gt;&lt;div id&#x3D;&quot;first&quot;&gt;&lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;div id&#x3D;&quot;second&quot;&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;&#x2F;div&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;&lt;&#x2F;div&gt;&lt;&#x2F;xmp&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>分析</strong></p><p>$(“#first&gt;p”)表示选中id=”first”的元素下的子元素p。</p><p>我们将这个例子与后代选择器的例子对比一下，就可以很清楚地知道：<strong>子代选择器只选取子元素，不包括其他后代元素。</strong></p><h2 id="三、兄弟选择器"><a href="#三、兄弟选择器" class="headerlink" title="三、兄弟选择器"></a>三、兄弟选择器</h2><p><strong>含义</strong><br>兄弟选择器，用于选中元素后面（不包括前面）的某一类兄弟元素。<br><strong>语法</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(&quot;M~N&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><strong>说明</strong><br>类名前面必须加上前缀英文句号（.），否则该选择器无法生效。类名前面加上英文句号（.），表示这是一个class选择器。</p><p><strong>举例</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(function()&#123;$(&quot;#second~p&quot;).css(&quot;color&quot;,&quot;red&quot;);&#125;);&lt;xmp&gt;&lt;div id&#x3D;&quot;first&quot;&gt;&lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;div id&#x3D;&quot;second&quot;&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;&#x2F;div&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;&lt;&#x2F;div&gt;&lt;&#x2F;xmp&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>分析</strong></p><p>$(“#second~p”)表示选取id=”second”的元素后面所有的兄弟元素p。记住，兄弟选择器只选取后面所有的兄弟元素，不包括前面的所有兄弟元素。</p><h2 id="四、相邻选择器"><a href="#四、相邻选择器" class="headerlink" title="四、相邻选择器"></a>四、相邻选择器</h2><p><strong>含义</strong><br>相邻选择器，用于选中元素后面（不包括前面）的某一个“相邻”的兄弟元素。相邻选择器与兄弟选择器也非常相似，不过也有明显的区别。</p><p>·兄弟选择器选取元素后面“所有”的某一类元素。</p><p>·相邻选择器选取元素后面“相邻”的某一个元素。</p><p><strong>语法</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(&quot;M+N&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><strong>说明</strong><br>“M元素”和“N元素”之间使用“+”选择符，表示选中M元素后面的相邻的兄弟元素N。</p><p><strong>举例</strong></p><pre class="line-numbers language-jQuery" data-language="jQuery"><code class="language-jQuery">$(function()&#123;$(&quot;#second+p&quot;).css(&quot;color&quot;,&quot;red&quot;);&#125;);&lt;xmp&gt;&lt;div id&#x3D;&quot;first&quot;&gt;&lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;div id&#x3D;&quot;second&quot;&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;&#x2F;div&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;    &lt;p&gt;我爱学习&lt;&#x2F;p&gt;&lt;&#x2F;div&gt;&lt;&#x2F;xmp&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>分析</strong><br>$(“#second+p”)表示选取id=”second”的元素后面的“相邻”的兄弟元素p。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> jQuery </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> jQuery选择器 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
   
   
     
     
     <entry>
-      <title>404</title>
-      <link href="404.html"/>
-      <url>404.html</url>
+      <title>about</title>
+      <link href="about/index.html"/>
+      <url>about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -193,9 +193,20 @@
     
     
     <entry>
-      <title>about</title>
-      <link href="about/index.html"/>
-      <url>about/index.html</url>
+      <title>categories</title>
+      <link href="categories/index.html"/>
+      <url>categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>404</title>
+      <link href="404.html"/>
+      <url>404.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -218,17 +229,6 @@
       <title>tags</title>
       <link href="tags/index.html"/>
       <url>tags/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>categories</title>
-      <link href="categories/index.html"/>
-      <url>categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
