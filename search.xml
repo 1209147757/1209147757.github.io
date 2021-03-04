@@ -182,9 +182,9 @@
     
     
     <entry>
-      <title>friends</title>
-      <link href="friends/index.html"/>
-      <url>friends/index.html</url>
+      <title>404</title>
+      <link href="404.html"/>
+      <url>404.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -204,20 +204,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="categories/index.html"/>
-      <url>categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>404</title>
-      <link href="404.html"/>
-      <url>404.html</url>
+      <title>friends</title>
+      <link href="friends/index.html"/>
+      <url>friends/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -229,6 +218,17 @@
       <title>tags</title>
       <link href="tags/index.html"/>
       <url>tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="categories/index.html"/>
+      <url>categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
