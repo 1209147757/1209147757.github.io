@@ -506,7 +506,7 @@ print(&#39;netloc:&#39;,result.netloc)
 print(&#39;path:&#39;,result.path)
 print(&#39;query:&#39;,result.query)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><code>urlparse</code>和<code>urlsplit</code>基本上是一模一样的。唯一不一样的地方是，<code>urlparse</code>里面多了一个<code>params</code>属性，而<code>urlsplit</code>没有这个<code>params</code>属性。比如有一个<code>url</code>为：<code>url = &#39;http://www.baidu.com/s;hello?wd=python&amp;username=abc#1&#39;</code>，<br>那么<code>urlparse</code>可以获取到<code>hello</code>，而<code>urlsplit</code>不可以获取到。<code>url</code>中的<code>params</code>也用得比较少。</p>
+<p><code>urlparse</code>和<code>urlsplit</code>基本上是一模一样的。唯一不一样的地方是，<code>urlparse</code>里面多了一个<code>params</code>属性，而<code>urlsplit</code>没有这个<code>params</code>属性。比如有一个<code>url</code>为：<code>url = &#39;http://www.baidu.com/s;hello?wd=python&amp;username=abc#1&#39;</code>，<br>那么<code>urlsplit</code>可以获取到<code>hello</code>，而<code>urlparse</code>不可以获取到。<code>url</code>中的<code>params</code>也用得比较少。</p>
 <h3 id="request-Request类："><a href="#request-Request类：" class="headerlink" title="request.Request类："></a>request.Request类：</h3><p>如果想要在请求的时候增加一些请求头，那么就必须使用<code>request.Request</code>类来实现。比如要增加一个<code>User-Agent</code>，示例代码如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">from urllib import request
 
@@ -725,7 +725,7 @@ with open(&#39;xx.html&#39;,&#39;w&#39;,encoding&#x3D;&#39;utf-8&#39;) as fp:
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">import requests
 
 url &#x3D; &quot;http:&#x2F;&#x2F;www.renren.com&#x2F;PLogin.do&quot;
-data &#x3D; &#123;&quot;email&quot;:&quot;970138074@qq.com&quot;,&#39;password&#39;:&quot;pythonspider&quot;&#125;
+data &#x3D; &#123;&quot;email&quot;:&quot;你的人人账号&quot;,&#39;password&#39;:&quot;你的人人密码&quot;&#125;
 resp &#x3D; requests.get(&#39;http:&#x2F;&#x2F;www.baidu.com&#x2F;&#39;)
 print(resp.cookies)
 print(resp.cookies.get_dict())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -734,7 +734,7 @@ print(resp.cookies.get_dict())<span aria-hidden="true" class="line-numbers-rows"
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">import requests
 
 url &#x3D; &quot;http:&#x2F;&#x2F;www.renren.com&#x2F;PLogin.do&quot;
-data &#x3D; &#123;&quot;email&quot;:&quot;970138074@qq.com&quot;,&#39;password&#39;:&quot;pythonspider&quot;&#125;
+data &#x3D; &#123;&quot;email&quot;:&quot;你的人人账号&quot;,&#39;password&#39;:&quot;你的人人密码&quot;&#125;
 headers &#x3D; &#123;
     &#39;User-Agent&#39;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;62.0.3202.94 Safari&#x2F;537.36&quot;
 &#125;
@@ -743,7 +743,7 @@ headers &#x3D; &#123;
 session &#x3D; requests.session()
 session.post(url,data&#x3D;data,headers&#x3D;headers)
 
-# 访问大鹏个人中心
+# 访问个人中心
 resp &#x3D; session.get(&#39;http:&#x2F;&#x2F;www.renren.com&#x2F;880151247&#x2F;profile&#39;)
 
 print(resp.text)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
